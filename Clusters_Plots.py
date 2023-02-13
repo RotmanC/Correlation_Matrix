@@ -33,10 +33,10 @@ dfres = pd.read_excel(path + filename, sheet_name='res')
 ### Adimensionalization
 
 # Scaled by mean and stdrd. deviation
-# X = StandardScaler().fit_transform(dfres)
+X = StandardScaler().fit_transform(dfres)
 
 # Scaled by Min and Max values
-X = MinMaxScaler().fit_transform(dfres)
+# X = MinMaxScaler().fit_transform(dfres)
 
 # Scaled by its maximum absolute value
 # X = MaxAbsScaler().fit_transform(dfres)
@@ -108,7 +108,7 @@ labels = ['Osorno', 'Santiago de Chile',
 ###### DENDOGRAMA
 # # Types of hierarchical clustering
 # ## ‘single’ uses the minimum of the distances between all observations of the two sets.
-linked = linkage(X, 'single')
+# linked = linkage(X, 'single')
 
 # ## ‘average’ uses the average of the distances of each observation of the two sets.
 # linked = linkage(X, 'average')
@@ -120,7 +120,7 @@ linked = linkage(X, 'single')
 # linked = linkage(X, 'ward')
 
 # ## ‘weighted’ Perform weighted/WPGMA linkage on the condensed distance matrix.
-# linked = linkage(X, 'weighted')
+linked = linkage(X, 'weighted')
  
 # Plot the dendogram
 plt.figure(figsize=(10, 7))
